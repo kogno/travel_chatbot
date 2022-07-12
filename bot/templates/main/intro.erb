@@ -1,0 +1,11 @@
+<%
+  @reply.text t(:intro_m1)  
+  @reply.typing 1
+  @reply.quick_reply(
+    t(:intro_m2),
+    {
+      title: t(:continue),
+      payload: "intro_bot"
+    }
+  )
+%>

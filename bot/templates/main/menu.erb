@@ -1,0 +1,21 @@
+<%
+  
+  @reply.quick_reply(
+    title,
+    [
+      {
+        title: t(:flights),
+        payload: "flights/search_start"
+      },
+      {
+        title: t(:checking),
+        payload: "airlines/search_checking_link"
+      },
+      {
+        title: t(:settings),
+        payload: "settings/menu"
+      }
+    ],
+    {slice_replies:1}
+  )
+%>

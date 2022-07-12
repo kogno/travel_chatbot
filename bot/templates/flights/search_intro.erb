@@ -1,0 +1,7 @@
+<%
+  @reply.text t(:alright)
+  @reply.text t(:flight_search_intro) + " (" + t(:opt_out_message_in_search) + ")"
+  @reply.typing 2
+  ask "destination_city"
+
+%>

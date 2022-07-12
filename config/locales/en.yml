@@ -1,0 +1,303 @@
+en:
+
+  intro_m1: "I am a travel and tourism chatbot developed with http://kogno.io, an open source framework for chatbots development, with the purpose of demonstrating the operation of this platform."
+  intro_m2: "My source code is available at https://github.com/kogno/travel_chatbot and the Kogno documentation at https://docs.kogno.io."
+
+  intro_bot_m1: "As I am a travel bot my goal is to help you find flights and the best places in tourist destinations."
+  intro_bot_m2: "You can write something like: 'I want to fly to Madrid next Monday and come back in 7 days'"
+  intro_bot_m3: "You can also use these buttons 👇"
+
+  hello:
+    - "Hi 😃"
+    - "¡Hello!"
+    - "¡Hey!"
+
+  goodbye:
+    - "Good bye!"
+    - "See you soon!"
+    - "Bye 👋"
+
+  how_can_i_help_you?:
+    - "How can I help you?"
+    - "How I can help?"
+    - "What can I do for you?"
+    - "Tell me what can I do for you?"
+    - "What would you like to do?"
+
+  is_there_something_else_i_can_do_for_you?:
+    - "Is there anything else I can do for you?"
+    - "Can I help you with something else?"
+    - "What would you like to do now?"
+    - "Would you like to do something else?"
+  
+  you_are_welcome:
+    - "You got it."
+    - "Don't mention it."
+    - "No worries."
+    - "Not a problem."
+    - "My pleasure."
+    - "It was nothing."
+    - "I'm happy to help."
+    - "Not at all."
+
+  do_not_understand:
+    - "Sorry, I'm afraid I don't follow you."  
+    - "Sorry, but I don't understand."
+    - "I'm sorry, I didn't catch that"
+    - "I'm confused."
+    - "I'm sorry, I didn't understand"
+    - "Sorry, my responses are limited."
+
+  maybe_i_can_help_you_with_these:
+    - "Maybe I can help you with these"
+    - "At the moment I can do this for you"
+    - "Can i help you with this"
+
+  continue:
+    "Continue"
+
+  flights:
+    "✈️ Flights"
+
+  hotels:
+    "🏨 Hotels"
+
+  destinations: 
+    "🏁 Destinations"
+
+  settings:
+    "⚙️ Settings"
+
+  default_my_city:
+    "📍 Set my city"
+
+  checking:
+    "🎫 Checkin"
+
+  modify_these:
+    "Modify these"
+    
+  change_language:
+    "%{flag} Change to %{lang}"
+
+  change_language:
+    "%{flag} Change to %{lang}"
+
+  language_changed_to:
+    "From now on we will speak in %{language}."
+
+  change_language?:
+    "Do you want us to speak in another language?"
+
+  english:
+    "English"
+  
+  spanish:
+    "Spanish"
+
+  flight_search_intro:
+    "I will ask you some questions to find the ideal flight for you."
+  
+  opt_out_message_in_search:
+    "If you want to cancel the search type 'stop'"
+
+  opt_out_message_in_search_short:
+    "To cancel write 'stop'"
+
+  where_are_you_flying?:
+    "Where are you flying?"
+
+  from_where_city?:
+    "From where city?"
+
+  when_do_you_want_to_fly?:
+    "When do you want to fly?"
+
+  if_it_is_a_round_trip_write_both_dates:
+    "If it's a round trip, write both dates."
+
+  both_departure_and_return_dates_confirmation:
+    "Do you want to flight on %{departure_date} and return on %{return_date}?"
+
+  when_do_you_want_to_return?: 
+    "When do you want to return?"
+
+  one_way_only_press_the_button:
+    "If it's only one way, press the button 👇"
+
+  one_way:
+    "One Way"
+
+  several_cities_found:
+    "I have found several cities with the query \"%{query}\", please confirm which one you are looking for"    
+
+  see_list:
+    "See list"
+    
+  results_found:
+    "Results found"
+  
+  city_confirmation_question:
+    "You've chosen %{city_name}, is correct?"
+
+  which_city_of_country_is_the_one_you_are_looking_for?:
+    "Which city of %{country_name} is the one you are looking for?"
+
+  no_cities_were_found:
+    "No cities were found with \"%{query}\""
+
+  are_you_looking_for_a_flight_to?:
+    "Are you looking for a flight to %{location}?"
+
+  alright:    
+    - "Alright"
+    - "Okay"
+    - "Very well"
+    - "Good"
+    - "Right then"
+    - "Perfect"
+    - "Okey-doke"
+
+  got_it:
+    - "Understood"
+    - "Perfect"
+    - "Alright"
+    - "Ok"
+    - "Okey-doke"
+    
+  done:
+    - "Done"
+    - "Roger that"
+    - "Ok"
+
+  afirmation:
+    "Yes"
+
+  negation:
+    "No"
+
+  example_of_cities:
+    "You can say in these ways: \"Barcelona, ​​Spain\" or just \"New York City\""
+
+  several_dates_found:
+    "You have sent more than one date, select one."
+
+  date_confirmation_question:
+    "The date is %{date}, is correct?"
+
+  departure_date_needed:
+    "In order to continue I need the departure date"
+
+  return_date_needed:
+    "In order to continue I need the return date or the duration of your flight."
+
+  just_to_confirm:
+    "Just to confirm.."
+  
+  flight_search_confirmation:
+    "The flight you are looking for will depart from %{departure_city} on %{departure_date} to %{destination_city} and will return on %{return_date}?"
+  
+  flight_search_confirmation_one_way:
+    "The flight you are looking for is a one-way flight from %{departure_city} to %{destination_city} on %{departure_date}?"
+
+  flight_check_results:
+    "Check results"
+
+  default_city_will_be_the_departure_city?:
+    "Will %{city_name} be the departure city?"
+
+  check_the_results_in_this_link:
+    "Check the results in this link %{link}"
+
+  flight_result_title:
+    "%{departure_city} to %{destination_city}, %{departure_date} — %{return_date}"
+
+  flight_result_title_one_way:
+    "%{departure_city} to %{destination_city}, %{departure_date}"
+
+  ok_lets_start_again:
+    "Ok.. let's start again"
+
+  default_city_request:
+    "Please tell me the default departure city for your flights"
+
+  default_city_changed_confirmation:
+    "I have changed your default city to %{city_name}"
+
+  your_default_city_is:
+    "Your default city is %{city_name}"
+
+  would_you_like_to_change_it?:
+    "Would you like to change it?"
+
+  ask_about_airline_name:
+    "What airline do you fly with?"
+
+  several_airlines_found:
+    "I have found several airlines"
+
+  airline_confirmation_question:
+    "Please confirm if %{airline_name} is the airline you are looking for"
+  
+  no_airline_found:
+    "I have not found any airline with the search criteria '%{query}'"
+
+  checking_link_not_found:
+    "Sorry but I have not been able to locate the %{airline_name} checking link"
+
+  checking_at_airline:
+    "Start your checking in at %{airline_name}"
+  
+  date:
+    abbr_day_names:
+    - Sun
+    - Mon
+    - Tue
+    - Wed
+    - Thu
+    - Fri
+    - Sat
+    abbr_month_names:
+    - 
+    - Jan
+    - Feb
+    - Mar
+    - Apr
+    - May
+    - Jun
+    - Jul
+    - Aug
+    - Sep
+    - Oct
+    - Nov
+    - Dec
+    day_names:
+    - Sunday
+    - Monday
+    - Tuesday
+    - Wednesday
+    - Thursday
+    - Friday
+    - Saturday
+    formats:
+      default: "%Y-%m-%d"
+      long: "%B %d, %Y"
+      short: "%b %d"
+    month_names:
+    - 
+    - January
+    - February
+    - March
+    - April
+    - May
+    - June
+    - July
+    - August
+    - September
+    - October
+    - November
+    - December
+    order:
+    - :year
+    - :month
+    - :day

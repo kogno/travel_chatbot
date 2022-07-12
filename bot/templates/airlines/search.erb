@@ -1,0 +1,42 @@
+<%
+
+  airlines = Airline.where("name like '%#{query}%'").limit(@user.platform == "whatsapp" ? 3 : 10)
+  count = airlines.count
+  
+  if count > 1
+
+    @reply.quick_reply(
+      t(:several_airlines_found),
+      airlines.map{|airline| 
+        {
+          title: airline.name,
+          payload: set_payload("airlines/get_checking_link", {airline_id: airline.id})
+        }      
+      },
+      { slice_replies: 2}
+    )
+    exit_answer()
+
+  elsif count == 1
+
+    airline = airlines.first
+    @reply.quick_reply(
+      t(:airline_confirmation_question, airline_name: airline.name),
+      [
+        {
+          title: t(:afirmation),
+          payload: set_payload("airlines/get_checking_link", {airline_id: airline.id})
+        },
+        {
+          title: t(:negation),
+          payload: "airlines/retry_search_checking_link"
+        }
+      ]
+    )
+    exit_answer()
+  
+  else
+    @reply.text t(:no_airline_found, query: query) + " (" + t(:opt_out_message_in_search) + ")"
+  end
+
+%>

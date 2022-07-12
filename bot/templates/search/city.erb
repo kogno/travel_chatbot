@@ -1,0 +1,95 @@
+<%
+
+  locations = Location.search(query)
+  if locations.count > 1
+    if @user.platform == "whatsapp"
+      @reply.list(
+        {
+          text: t(:several_cities_found, query: query),
+          button: t(:see_list),
+          sections:[
+            {
+              title: t(:results_found),
+              rows: locations.map{|city| 
+                {
+                  title: city.name_with_country_emoji_and_code.truncate(24),
+                  payload: set_payload("confirm", {city_id: city.id})
+                }      
+              }
+            }
+          ]
+        }
+      )        
+    else    
+      @reply.quick_reply(
+        t(:several_cities_found, query: query),
+        locations.map{|city| 
+          {
+            title: city.name_with_country_emoji_and_code,
+            payload: set_payload("confirm", {city_id: city.id})
+          }      
+        },
+        { slice_replies: 2}
+      )
+    end
+
+  elsif locations.count == 1
+
+    location = locations.first
+    if location.class == Country
+      country = location
+      cities = country.airports.where("flightable = 1").limit(10).includes(:city).map{|a| a.city}
+      if @user.platform == "whatsapp"
+        @reply.list(
+          {
+            text: t(:which_city_of_country_is_the_one_you_are_looking_for?, country_name: country.name),
+            button: t(:see_list),
+            sections:[
+              {
+                title: t(:results_found),
+                rows: cities.map{|city| 
+                  {
+                    title: city.name_with_country_emoji_and_code.truncate(24),
+                    payload: set_payload("confirm", {city_id: city.id})
+                  }      
+                }
+              }
+            ]
+          }
+        )          
+      else
+        @reply.quick_reply(
+          t(:which_city_of_country_is_the_one_you_are_looking_for?, country_name: country.name),
+          cities.map{|city| 
+            {
+              title: "#{city.name} (#{city.code})",
+              payload: set_payload("confirm", {city_id: city.id})
+            }      
+          },
+          { slice_replies: 2}
+        )
+      end
+    else
+      city = location
+      @reply.quick_reply(
+        t(:city_confirmation_question, city_name: city.name_with_country_emoji_and_code),
+        [
+          {
+            title: t(:afirmation),
+            payload: set_payload("confirm", {city_id: city.id})
+          },
+          {
+            title: t(:negation),
+            payload: "restart"
+          }
+        ]
+      )
+    end
+
+  else
+
+    @reply.text t(:no_cities_were_found, query: query)  + " (#{t(:opt_out_message_in_search_short)})"
+
+  end
+
+%>

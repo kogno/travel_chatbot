@@ -1,0 +1,28 @@
+<%
+
+  from_city = City.find_by_code(departure_city)
+  to_city = City.find_by_code(destination_city)
+
+  @reply.text t(:just_to_confirm)
+  @reply.typing 2
+  if return_date
+    question = t(:flight_search_confirmation, departure_city: from_city.name_with_country_emoji, destination_city: to_city.name_with_country_emoji, departure_date: l(departure_date.to_date,  format: :long), return_date: l(return_date.to_date,  format: :long))
+  else
+    question = t(:flight_search_confirmation_one_way, departure_city: from_city.name_with_country_emoji, destination_city: to_city.name_with_country_emoji, departure_date: l(departure_date.to_date,  format: :long))
+  end
+
+  @reply.quick_reply(
+    question,
+    [
+      {
+        title: t(:afirmation),
+        payload: set_payload("flights/confirm_search", departure_city: departure_city, destination_city: destination_city, departure_date: departure_date, return_date: return_date)
+      },
+      {
+        title: t(:negation),
+        payload: "flights/reject_search"
+      }          
+    ]    
+  )
+
+%>

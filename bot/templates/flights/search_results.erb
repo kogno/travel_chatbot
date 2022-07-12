@@ -1,0 +1,22 @@
+<%
+
+  if return_date
+    url = "https://www.kayak.com/flights/#{departure_city}-#{destination_city}/#{l(departure_date.to_date, format: "%Y-%m-%d")}/#{l(return_date.to_date, format: "%Y-%m-%d")}?sort=bestflight_a"
+    title = t(:flight_result_title, departure_city: departure_city, destination_city: destination_city, departure_date: l(departure_date.to_date, format: :short), return_date: l(return_date.to_date, format: :short))
+  else
+    url = "https://www.kayak.com/flights/#{departure_city}-#{destination_city}/#{l(departure_date.to_date, format: "%Y-%m-%d")}?sort=bestflight_a"
+    title = t(:flight_search_confirmation_one_way, departure_city: departure_city, destination_city: destination_city, departure_date: l(departure_date.to_date, format: :short))
+  end
+
+  city = City.find_by(code: destination_city)
+
+  @reply.url(
+      {
+        title: title,
+        image: city.picture,
+        url: url,
+        button: t(:flight_check_results)
+      }
+    )    
+
+%>

@@ -1,0 +1,35 @@
+<%
+
+  if date.class == Array && date.count > 1
+
+    @reply.quick_reply(
+      t(:several_dates_found),
+      date.map{|d| 
+        {
+          title: l(d.to_date,  format: :long),
+          payload: set_payload("confirm", {date: d})
+        }      
+      },
+      { slice_replies: 2}
+    )
+
+  else
+
+    date = date.first if date.class == Array
+    @reply.quick_reply(
+      t(:date_confirmation_question, date: l(date.to_date, format: :long)),
+      [
+        {
+          title: t(:afirmation),
+          payload: set_payload("confirm", {date: date})
+        },
+        {
+          title: t(:negation),
+          payload: "restart"
+        }
+      ]
+    )
+
+  end
+
+%>

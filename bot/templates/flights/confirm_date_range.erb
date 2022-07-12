@@ -1,0 +1,17 @@
+<%
+
+    @reply.quick_reply(
+      t(:both_departure_and_return_dates_confirmation, departure_date: l(departure_date.to_date,  format: :long), return_date: l(return_date.to_date,  format: :long)),
+      [
+        {
+          title: t(:afirmation),
+          payload: set_payload("confirm", departure_date: departure_date, return_date: return_date)
+        },
+        {
+          title: t(:negation),
+          payload: "restart"
+        }          
+      ]
+    )
+
+%>

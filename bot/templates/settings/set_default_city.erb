@@ -1,0 +1,22 @@
+<%
+
+  if @user.city.nil?
+
+    ask("default_city")
+
+  else  
+
+    @reply.text t(:your_default_city_is, city_name: @user.city.name_with_country)
+    @reply.quick_reply(
+      t(:would_you_like_to_change_it?),
+      [
+        {
+          title: t(:afirmation),
+          payload: "settings/set_default_city_confirm"
+        }
+      ]
+    )
+    
+  end
+
+%>

@@ -1,0 +1,17 @@
+<%
+
+  @reply.quick_reply(
+    t(:default_city_will_be_the_departure_city?, city_name: @user.city.name_with_country),
+    [
+      {
+        title: t(:afirmation),
+        payload: set_payload("use_default_city")
+      },
+      {
+        title: t(:negation),
+        payload: "change"
+      }  
+    ]
+  )  
+
+%>

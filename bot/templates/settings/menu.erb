@@ -1,0 +1,26 @@
+<%
+
+  if @user.locale == "es"
+    flag = "🇺🇸"
+    lang_name = t(:english)
+    lang = :en
+  else
+    flag = "🇪🇸"
+    lang_name = t(:spanish)
+    lang = :es
+  end
+  
+  @reply.quick_reply(
+    t(:modify_these),
+    [
+      {
+        title: t(:default_my_city),
+        payload: "settings/set_default_city"
+      },
+      {
+        title: t(:change_language, flag: flag, lang: lang_name),
+        payload: set_payload("settings/change_language", lang: lang)
+      }
+    ]
+  )
+%>
