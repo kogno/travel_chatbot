@@ -43,7 +43,7 @@ collation: utf8mb4_unicode_ci
 
 #### 3 - Create project database tables.
 
-Execute the SQL contained in the file `installation/travel_bot.sql`
+Execute the SQL contained in the file [`installation/travel_bot.sql`](installation/travel_bot.sql)
 
 Alternatively you can run this in order to do that
 ```bash
@@ -66,7 +66,7 @@ Loading development environment (Kogno 1.0.1)
 
 The web server is needed to receive incoming updates via an outgoing webohoks from the messaging platforms like Messenger, Telegram or WhatsApp.
 
-[Read how to configure the web server](https://docs.kogno.io/installation/configuration "Configure Kogno"){:target="_blank"}
+[Read how to configure the web server](https://docs.kogno.io/installation/configuration "Configure Kogno")
 
 #### Start the server 
 
@@ -77,9 +77,9 @@ in Foregrond => `kogno http fg`
 
 You can configure some or all of the messaging platforms currently supported by the framework. See how bellow:
 
-- [Configure Messenger](https://docs.kogno.io/installation/messenger-configuration){:target="_blank"}
-- [Configure Telegram](https://docs.kogno.io/installation/telegram-configuration){:target="_blank"}
-- [Configure WhatsApp](https://docs.kogno.io/installation/whatsapp-configuration){:target="_blank"}
+- [Configure Messenger](https://docs.kogno.io/installation/messenger-configuration)
+- [Configure Telegram](https://docs.kogno.io/installation/telegram-configuration)
+- [Configure WhatsApp](https://docs.kogno.io/installation/whatsapp-configuration)
 
 ### Configure The NLP Engine
 
