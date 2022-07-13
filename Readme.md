@@ -4,6 +4,12 @@ This flight search chatbot was developed with Kogno for an educational purpose.
 
 Learn how to develop conversational apps in Kogno by reading the documentation at https://docs.kogno.io
 
+### Try this app on the following messaging platforms:
+
+`Messenger:` <https://m.me/kognoTravel>
+`Telegram:` <https://t.me/KognoTravelBot>
+`WhatsApp:` <https://wa.me/13218005873>
+
 ## Setup
 
 ### Install Kogno's gem
