@@ -7,8 +7,11 @@ Learn how to develop conversational apps in Kogno by reading the documentation a
 ### Try this app on the following messaging platforms:
 
 `Messenger:` <https://m.me/kognoTravel>
+
 `Telegram:` <https://t.me/KognoTravelBot>
+
 `WhatsApp:` <https://wa.me/13218005873>
+
 
 ## Setup
 
