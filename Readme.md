@@ -17,10 +17,11 @@ Learn how to develop conversational apps in Kogno by reading the documentation a
 
 ### Install Kogno's gem
 
-`gem install kogno`
+    $ gem install kogno
 
 #### Installing Dependencies
-`bundle install`
+    
+    $ bundle install
 
 ### Database
 
@@ -48,18 +49,19 @@ collation: utf8mb4_unicode_ci
 
 #### 2 - Create Kogno database tables.
 
-`kogno install`
+    $ kogno install
 
 #### 3 - Create project database tables.
 
 Execute the SQL contained in the file [`installation/travel_bot.sql`](installation/travel_bot.sql)
 
 Alternatively you can run this in order to do that
-```bash
-kogno runner "File.read('installation/travel_bot.sql').split(';').each { |query| ActiveRecord::Base.connection.execute(query)}"
-```
+    
+    $ kogno runner "File.read('installation/travel_bot.sql').split(';').each { |query| ActiveRecord::Base.connection.execute(query)}"
 
-##### Testing
+
+#### 4 - Testing
+
 You can easily test the database by running the Kogno console with `kogno c`.
 
 ```ruby
@@ -79,8 +81,14 @@ The web server is needed to receive incoming updates via an outgoing webohoks fr
 
 #### Start the server 
 
-In Background => `kogno http start` 
-in Foregrond => `kogno http fg`
+##### In Background
+
+    $ kogno http start
+    
+##### in Foregrond
+
+    $ kogno http fg
+    
 
 ### Platforms
 
