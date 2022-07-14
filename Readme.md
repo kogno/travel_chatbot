@@ -65,7 +65,7 @@ Alternatively you can run this in order to do the same operation:
 You can easily test the database by running the Kogno console with `kogno c`.
 
 ```ruby
-travel_chatbot/ kogno c
+travel_chatbot/$ kogno c
 Loading development environment (Kogno 1.0.1)
 2.7.0 :001 > Country.first.cities.first
   Country Load (0.9ms)  SELECT `countries`.* FROM `countries` ORDER BY `countries`.`id` ASC LIMIT 1
