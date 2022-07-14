@@ -55,7 +55,7 @@ collation: utf8mb4_unicode_ci
 
 Execute the SQL contained in the file [`installation/travel_bot.sql`](installation/travel_bot.sql)
 
-Alternatively you can run this in order to do that
+Alternatively you can run this in order to do the same operation:
     
     $ kogno runner "File.read('installation/travel_bot.sql').split(';').each { |query| ActiveRecord::Base.connection.execute(query)}"
 
